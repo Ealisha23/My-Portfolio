@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+
+    <!-- Apply saved theme before first paint, so there's no flash of the wrong theme -->
+    <script>
+      (function () {
+        var saved = localStorage.getItem('portfolio-theme');
+        if (saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
+    <!-- League Spartan (as requested) with a sans-serif fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Devicon: gives each skill pill its real tech logo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- portfolio.css loads last so its rules (like the theme switch) always win over bootstrap's defaults -->
+    <link rel="stylesheet" href="portfolio.css" />
+
+</head>
+<body>
+    <header>
+      <nav class="navbar">
+  <!-- Navbar content -->
+   <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+   </ul>
+   <div class="theme-toggle-item">
+     <label class="theme-switch" for="themeToggle">
+       <input type="checkbox" id="themeToggle" />
+       <span class="theme-switch-track">
+         <span class="theme-switch-thumb"></span>
+       </span>
+       <span class="visually-hidden">Toggle dark mode</span>
+     </label>
+   </div>
+</nav>
+  </header>
+
+ <!--About section-->
+ <section id="about">
+ <div class="portfolio-header">
+  <h1>Hello, I am <span class="name-highlight">Ealisha Narware</span></h1>
+
+  <div class="role-wrapper">
+    <span class="static-text">I am a</span>
+    <div class="dynamic-roles"></div>
+  </div>
+ </div>
+ </section>
+
+    <section id="para">
+    <p> "I am a third-year B.Tech student transitioning ideas into digital reality.
+        I specialize in Software Engineering and Data Analytics, utilizing tools like React, Java,
+         and Python to build scalable,
+        data-driven applications. An active hackathon participant and open-source enthusiast, 
+        I am always looking for the next complex problem to solve." </p>
+
+        <div class="button-group">
+        <a href="Ealisha resume.docx" download class="btn btn-primary">Download Resume</a>
+        <a href="https://github.com/Ealisha23"  class="btn btn-outline-secondary">Github </a>
+        </div>
+    </section>
+
+<section id="education" class="Education">
+    <h1> Education </h1>
+    <div class="college_card">
+        <span> 2023-2027</span>
+        <span><h2> Bachelor of Technology (CSE)</h2>
+        SAGE University , Bhopal</span>
+    </div>
+
+    <div class="school_card">
+      <span> 2023 </span>
+      <span><h2> Higher Secondary  XII</h2></span>
+      <span> Delhi Public School , Bhopal</span>
+    </div>
+</section>
+
+   <section id="skills" class="skills-container">
+   <h2>TECHNICAL SKILLS</h2>
+
+  <!--card 1 frontend-->
+  <div class="skill-card">
+    <h3 class="card-title">Frontend </h3>
+    <hr class="card-divider" />
+
+    <!-- Container for the individual skill pills -->
+    <div class="skills-list">
+      <div class="skill-pill">
+        <i class="devicon-html5-plain colored"></i> <span> HTML </span>
+      </div>
+
+      <div class="skill-pill">
+        <i class="devicon-css3-plain colored"></i> <span> CSS </span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-react-original colored"></i> <span>React Js</span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-redux-original colored"></i> <span> Redux </span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-tailwindcss-plain colored"></i> <span> Tailwind CSS </span>
+      </div>
+
+      <div class="skill-pill">
+        <i class="devicon-figma-plain colored"></i> <span> Figma UI </span>
+      </div>
+    </div>
+  </div>
+
+  <!--card 2 programming skills-->
+  <div class="skill-card">
+    <h3 class="card-title">Programming Languages</h3>
+    <hr class="card-divider" />
+
+    <!-- Container for the individual skill pills -->
+    <div class="skills-list">
+
+      <div class="skill-pill">
+        <i class="devicon-java-plain colored"></i> <span>Java</span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-python-plain colored"></i> <span>Python</span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-javascript-plain colored"></i> <span>Javascript</span>
+      </div>
+    </div>
+  </div>
+
+  <!--card 3 Backend -->
+  <div class="skill-card">
+    <h3 class="card-title">Backend</h3>
+    <hr class="card-divider" />
+
+    <!-- Container for the individual skill pills -->
+    <div class="skills-list">
+
+      <div class="skill-pill">
+        <i class="devicon-spring-plain colored"></i> <span>SpringBoot</span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-express-original"></i> <span>Express js</span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-nodejs-plain colored"></i> <span> Node js</span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-mysql-plain colored"></i> <span> SQL</span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-mongodb-plain colored"></i> <span> Mongo DB</span>
+      </div>
+    </div>
+  </div>
+
+  <!--card 4 Tools -->
+  <div class="skill-card">
+    <h3 class="card-title">Tools</h3>
+    <hr class="card-divider" />
+
+     <!-- Container for the individual skill pills -->
+    <div class="skills-list">
+
+      <div class="skill-pill">
+        <i class="devicon-vscode-plain colored"></i> <span>Vs Code</span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-git-plain colored"></i> <span>Git</span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-github-original"></i> <span> Github</span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-vercel-original"></i> <span> Vercel</span>
+      </div>
+      <div class="skill-pill">
+        <span class="skill-icon-custom" aria-hidden="true" title="Antigravity">
+          <svg viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="12" cy="12" rx="10" ry="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="12" cy="12" r="2.6" fill="currentColor"/>
+          </svg>
+        </span>
+        <span> Antigravity </span>
+      </div>
+      <div class="skill-pill">
+        <i class="devicon-amazonwebservices-plain colored"></i> <span> AWS</span>
+      </div>
+    </div>
+  </div>
+  <!-- Repeat .skill-card for Frontend, Tools, etc. -->
+
+</section>
+
+<!--Certifications section-->
+<section id="certifications" class="certifications-container">
+  <h2>CERTIFICATIONS</h2>
+
+  <div class="certifications-grid">
+
+    <div class="certification-card">
+      <h3>AWS Certified Cloud Practitioner</h3>
+      <p class="cert-issuer">Geeks for Geeks &middot; 2025</p>
+      <a href="#" class="btn btn-outline-secondary btn-sm">View Credential</a>
+    </div>
+
+    <div class="certification-card">
+      <h3>Full Stack Web Development</h3>
+      <p class="cert-issuer">Apna College &middot; 2026</p>
+      <a href="#" class="btn btn-outline-secondary btn-sm">View Credential</a>
+    </div>
+
+    <div class="certification-card">
+      <h3>Data Analytics with Python</h3>
+      <p class="cert-issuer"> &middot; 2024</p>
+      <a href="#" class="btn btn-outline-secondary btn-sm">View Credential</a>
+    </div>
+
+  </div>
+</section>
+
+<!--Projects section-->
+<section id="projects" class="projects-container">
+  <h2>PROJECTS</h2>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-tag">Personal Project</div>
+      <h3>Portfolio Website</h3>
+      <p>This site — the one you're on right now. Built from scratch with HTML, CSS and vanilla JS, including a dark mode toggle, a typing-effect intro and a fully responsive layout.</p>
+      <div class="project-stack">
+        <span class="stack-pill">HTML</span>
+        <span class="stack-pill">CSS</span>
+        <span class="stack-pill">JavaScript</span>
+        <span class="stack-pill">Bootstrap</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="btn btn-primary btn-sm">Live Demo</a>
+        <a href="#" class="btn btn-outline-secondary btn-sm">Source Code</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Full Stack &middot; ML</div>
+      <h3>Stock Price Predictor</h3>
+      <p>A web app that pulls live ticker data through the Finnhub API and forecasts short-term price movement for a chosen stock. The frontend streams real-time quotes to a chart while a Python model in the backend crunches historical trends to generate the prediction.</p>
+      <div class="project-stack">
+        <span class="stack-pill">Python</span>
+        <span class="stack-pill">Finnhub API</span>
+        <span class="stack-pill">React</span>
+        <span class="stack-pill">Flask</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="btn btn-primary btn-sm">Live Demo</a>
+        <a href="#" class="btn btn-outline-secondary btn-sm">Source Code</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Backend</div>
+      <h3>Custom Redis Server</h3>
+      <p>An in-memory key-value database engine implementing TCP socket networking, low-level byte stream parsing, and RESP protocol 
+        compliance for real-time client-server data serialization.</p>
+      <div class="project-stack">
+        <span class="stack-pill">Java</span>
+        <span class="stack-pill">TCP Sockets</span>
+        <span class="stack-pill">RESP Protocols</span>
+        <span class="stack-pill">Git</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="btn btn-primary btn-sm">Live Demo</a>
+        <a href="#" class="btn btn-outline-secondary btn-sm">Source Code</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">To Add</div>
+      <h3>To Add</h3>
+      <p>.</p>
+      <div class="project-stack">
+        <span class="stack-pill">.</span>
+        <span class="stack-pill">.</span>
+        <span class="stack-pill">.</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="btn btn-primary btn-sm">Live Demo</a>
+        <a href="#" class="btn btn-outline-secondary btn-sm">Source Code</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">To Add</div>
+      <h3>TO ADD</h3>
+      <p>.</p>
+      <div class="project-stack">
+        <span class="stack-pill">.</span>
+        <span class="stack-pill">.</span>
+        <span class="stack-pill">.</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="btn btn-primary btn-sm">Live Demo</a>
+        <a href="#" class="btn btn-outline-secondary btn-sm">Source Code</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--Contact section-->
+<section id="contact" class="contact-container">
+  <h2>GET IN TOUCH</h2>
+  <p class="contact-intro">Have an opportunity, project idea, or just want to connect? My inbox is open.</p>
+
+  <div class="contact-content">
+    <div class="contact-links">
+      <a href="mailto:ealisha@example.com" class="contact-link">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">ealishanarware29@gmail.com</span>
+      </a>
+      <a href="https://github.com/" target="_blank" class="contact-link">
+        <span class="contact-label">Github</span>
+        <span class="contact-value">https://github.com/Ealisha23</span>
+      </a>
+      <a href="https://linkedin.com/" target="_blank" class="contact-link">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">in/ealisha-narware-6263s </span>
+      </a>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Ealisha Narware. Built with HTML, CSS , Javascript &amp; a lot of coffee.&#9749;</p>
+</footer>
+
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<!-- 2. Initialize the typing effect  -->
+<script>
+  let typed = new Typed('.dynamic-roles', {
+    strings: [
+      'Software Engineer', 
+      'Full Stack Developer', 
+      'Tech Enthusiast'
+    ],
+    typeSpeed: 50,       /* Speed of typing  */
+    backSpeed: 30,       /* Speed of deleting */
+    backDelay: 1500,     /* How long it pauses before deleting the word */
+    startDelay: 300,     /* Pause before the first word starts typing */
+    loop: true           /* Makes it repeat forever */
+  });
+</script>
+
+<!-- 3. Dark mode toggle -->
+<script>
+  (function () {
+    let toggle = document.getElementById('themeToggle');
+    let isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    toggle.checked = isDark;
+
+    toggle.addEventListener('change', function () {
+      let theme = toggle.checked ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('portfolio-theme', theme);
+    });
+  })();
+</script>
+</body>
+</html>

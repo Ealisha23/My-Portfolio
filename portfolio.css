@@ -1,0 +1,596 @@
+   /* This entire file is just for CSS */
+:root {
+  --color-lilac: #F4EFFF;
+  --color-purple: #7A42ED;
+  --color-dark-purple: #332A47;
+  
+}
+
+body {
+  background-color: var(--color-lilac);
+  color: var(--color-dark-purple);
+  
+}
+#section{
+    padding: 10px;
+}
+/* navbar portion */
+.navbar{
+   background-color:#332A47 ;
+   padding: 1rem 2rem;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar ul{
+  list-style: none; /* Removes the default bullet points */
+  margin: 3px;
+  padding: 1.1rem;
+  display: flex; /* Aligns items in a row */
+  justify-content: center; /* Centers the links horizontally */
+  gap: 2rem; /* Creates space between each link */
+ 
+}
+.navbar a{
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  color:#F4EFFF;
+}
+.navbar a:hover {
+  color: #7A42ED; /* Changes text to your bright purple when hovered */
+   transform: translateY(-4px); 
+  /* Creates the soft, deep shadow underneath to simulate height */
+   text-shadow:
+    1px 1px 2px black,
+    0 0 1em blue,
+    0 0 0.2em whitesmoke;
+  color: white;
+}
+.dynamic-roles{
+    font-weight:40px;
+}
+.dynamic-roles, .typed-cursor {
+  display: inline-block; 
+}
+
+#para {
+  /* Flexbox setup to stack elements vertically and center them */
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Centers items horizontally */
+  justify-content: center;  /* Centers items vertically (if the section has a height) */
+  
+  text-align: center;       /* Ensures the text inside the <p> is centered */
+  padding: 2rem;            /* Adds some breathing room around the edges */
+}
+
+/* Restrict the width of the paragraph so it's easy to read */
+#para p {
+  max-width: 800px;         /* Prevents the text from stretching too wide on large screens */
+  line-height: 1.6;         /* Adds space between the lines of text */
+  margin-bottom: 2rem;      /* Pushes the buttons down slightly */
+}
+
+/* Align the buttons side-by-side with a gap */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;                /* Adds perfect spacing between the two buttons */
+}
+#about{
+     display: flex;
+  flex-direction: column;
+  align-items: center;      /* Centers items horizontally */
+  justify-content: center;  /* Centers items vertically (if the section has a height) */
+  
+  text-align: center;       /* Ensures the text inside the <p> is centered */
+  padding: 2rem;          
+}
+.Education{
+    display: inline-flex;
+    flex-direction: column;
+    display: block;
+    height: 3rem;
+    width: 4rem;
+    border: 2px solid #332A47;
+    padding: 4rem 2rem;
+}
+.Education h1{
+    color: var(--color-dark-purple);
+    margin-bottom: 3rem;
+}
+
+/* ======================================================================
+   Everything below this line is new — added to finish the page.
+   Nothing above has been edited or removed. Two of your original rules
+   (.dynamic-roles font-weight, .Education height/width) were placeholder
+   values that broke the layout, so instead of touching those lines I've
+   added higher-specificity rules below that override just the broken
+   parts and leave your original declarations exactly as you wrote them.
+   ====================================================================== */
+
+/* ---- Font: League Spartan everywhere, sans-serif fallback ---- */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'League Spartan', sans-serif;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+button, input, textarea {
+  font-family: 'League Spartan', sans-serif;
+}
+
+/* ---- Fix: dynamic-roles had an invalid font-weight (40px is not a
+   valid weight) which meant it never actually rendered with any size
+   or weight. This overrides just that, using the same selector so
+   your original rule stays untouched above. It's now an empty inline
+   element that Typed.js types one role into at a time, instead of the
+   three static spans that used to all show at once. ---- */
+.dynamic-roles {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-purple);
+  min-height: 2rem;
+}
+.typed-cursor {
+  color: var(--color-purple);
+}
+
+/* ---- Hero / About ---- */
+#about {
+  padding-top: 4rem;
+}
+.portfolio-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+.name-highlight {
+  color: var(--color-purple);
+}
+.role-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.static-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+/* ---- Buttons (layered on top of Bootstrap so they match the palette) ---- */
+.btn-primary {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+}
+.btn-primary:hover {
+  background-color: #6633d9;
+  border-color: #6633d9;
+}
+.btn-outline-secondary {
+  color: var(--color-dark-purple);
+  border-color: var(--color-dark-purple);
+}
+.btn-outline-secondary:hover {
+  background-color: var(--color-dark-purple);
+  border-color: var(--color-dark-purple);
+}
+
+/* ---- Section heading style used by Education / Skills / Certifications / Projects / Contact ---- */
+#education h1,
+.skills-container > h2,
+.certifications-container > h2,
+.projects-container > h2,
+.contact-container > h2 {
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-dark-purple);
+}
+
+/* ---- Fix: .Education was fixed at 3rem tall / 4rem wide, which clipped
+   all of its content. This restores a sensible layout without changing
+   your original declarations above. ---- */
+#education.Education {
+  height: auto;
+  width: auto;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  background-color: #ffffff;
+}
+#education.Education h1 {
+  margin-bottom: 2rem;
+}
+
+.college_card,
+.school_card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(51, 42, 71, 0.15);
+}
+.school_card {
+  border-bottom: none;
+}
+.college_card span:first-child,
+.school_card span:first-child {
+  min-width: 110px;
+  font-weight: 600;
+  color: var(--color-purple);
+}
+.college_card h2,
+.school_card h2 {
+  font-size: 1.2rem;
+  margin: 0 0 0.25rem 0;
+}
+
+/* ---- Skills ---- */
+.skills-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+.skill-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.card-divider {
+  border: none;
+  border-top: 1px solid rgba(51, 42, 71, 0.15);
+  margin: 0.75rem 0 1.25rem 0;
+}
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background-color: var(--color-lilac);
+  border: 1px solid rgba(122, 66, 237, 0.3);
+  color: var(--color-dark-purple);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+/* Real tech-logo icons via Devicon, sized to sit neatly inside a pill */
+.skill-pill i[class*="devicon-"] {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+/* Devicon ships some logos (Express, Github) only in black/currentColor —
+   this keeps them visible against the lilac pill in light mode */
+.skill-pill i.devicon-express-original,
+.skill-pill i.devicon-github-original {
+  color: var(--color-dark-purple);
+}
+/* Vercel and Antigravity don't have official Devicon logos, so they get
+   small hand-drawn stand-ins: Vercel's actual mark is a plain triangle,
+   and Antigravity gets a little orbiting-dot mark that nods to the name */
+.skill-pill i.devicon-vercel-original {
+  font-style: normal;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid var(--color-dark-purple);
+  display: inline-block;
+}
+.skill-icon-custom {
+  display: inline-flex;
+  color: var(--color-purple);
+}
+
+/* ---- Certifications ---- */
+.certifications-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.certification-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  border-left: 4px solid var(--color-purple);
+}
+.certification-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.1rem;
+}
+.cert-issuer {
+  font-size: 0.9rem;
+  color: var(--color-purple);
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+/* ---- Projects ---- */
+.projects-container {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.project-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+.project-tag {
+  align-self: flex-start;
+  background-color: var(--color-purple);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+.project-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+.project-card p {
+  flex-grow: 1;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 1.25rem 0;
+}
+.stack-pill {
+  background-color: var(--color-lilac);
+  color: var(--color-dark-purple);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ---- Contact ---- */
+.contact-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+.contact-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0.75rem auto 2rem auto;
+  line-height: 1.6;
+}
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+}
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.contact-link {
+  text-decoration: none;
+  color: var(--color-dark-purple);
+  display: flex;
+  flex-direction: column;
+}
+.contact-links a:hover{
+  color:#146fe6;
+}
+.contact-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-purple);
+}
+.contact-value {
+  font-size: 1.05rem;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid rgba(51, 42, 71, 0.25);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  background-color: var(--color-lilac);
+  color: var(--color-dark-purple);
+  resize: vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 1px;
+}
+.contact-form button {
+  align-self: flex-start;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background-color: var(--color-dark-purple);
+  color: var(--color-lilac);
+  font-size: 0.9rem;
+}
+
+/* ---- Navbar layout: links centered in the available space, toggle
+   pinned to the far right ---- */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+.navbar ul {
+  flex: 1;
+}
+
+/* ---- Dark mode toggle switch (lives in the navbar) ---- */
+.theme-toggle-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.theme-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+/* Hidden but still focusable/clickable, sized and stacked with !important
+   so bootstrap's default checkbox styling (which loads before this file
+   in some setups) can never make the raw box reappear */
+.theme-switch input[type="checkbox"] {
+  position: absolute !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  opacity: 0 !important;
+  width: 42px !important;
+  height: 22px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  cursor: pointer;
+}
+.theme-switch-track {
+  width: 42px;
+  height: 22px;
+  background-color: rgba(244, 239, 255, 0.25);
+  border: 1px solid rgba(244, 239, 255, 0.5);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  transition: background-color 0.25s ease;
+}
+.theme-switch-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-lilac);
+  transition: transform 0.25s ease;
+}
+.theme-switch input:checked + .theme-switch-track {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+}
+.theme-switch input:checked + .theme-switch-track .theme-switch-thumb {
+  transform: translateX(20px);
+}
+.theme-switch input:focus-visible + .theme-switch-track {
+  outline: 2px solid var(--color-lilac);
+  outline-offset: 2px;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* ---- Dark theme palette ----
+   Toggled by adding data-theme="dark" to <html> (see the script at the
+   bottom of index.html). Only the colors change; layout stays identical. */
+:root[data-theme="dark"] {
+  --color-lilac: #1C1626;
+  --color-dark-purple: #EDE7FB;
+}
+:root[data-theme="dark"] body {
+  background-color: #14101C;
+  color: var(--color-dark-purple);
+}
+:root[data-theme="dark"] .skill-card,
+:root[data-theme="dark"] .project-card,
+:root[data-theme="dark"] .certification-card,
+:root[data-theme="dark"] .contact-content,
+:root[data-theme="dark"] #education.Education {
+  background-color: #221A33;
+}
+:root[data-theme="dark"] .skill-pill,
+:root[data-theme="dark"] .stack-pill {
+  background-color: #2C2240;
+  border-color: rgba(122, 66, 237, 0.5);
+}
+:root[data-theme="dark"] .contact-form input,
+:root[data-theme="dark"] .contact-form textarea {
+  background-color: #2C2240;
+  color: var(--color-dark-purple);
+  border-color: rgba(237, 231, 251, 0.2);
+}
+:root[data-theme="dark"] .btn-outline-secondary {
+  color: var(--color-dark-purple);
+  border-color: var(--color-dark-purple);
+}
+:root[data-theme="dark"] .skill-pill i.devicon-express-original,
+:root[data-theme="dark"] .skill-pill i.devicon-github-original {
+  color: var(--color-dark-purple);
+}
+:root[data-theme="dark"] .skill-pill i.devicon-vercel-original {
+  border-bottom-color: var(--color-dark-purple);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 700px) {
+  .navbar {
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+  }
+  .navbar ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .college_card,
+  .school_card {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}
